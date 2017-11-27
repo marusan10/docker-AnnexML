@@ -1,0 +1,14 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  overrride:
+    - docker info
+    - docker build -t marusan10/docker-annexml
+
+test:
+  override:
+    - cd /usr/local/src/AnnexML-master/
+    - bash example_run.bash
+
